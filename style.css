@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root{
-    --cor-busca: #5913b441;
-    --cor-hover-texto: #5913b4;
-    --cor-primaria-fonte: #3B1270;
+    --cor-link: #5a13b4;
+    --cor-texto: #3B1270;
+    --cor-texto-destaque: #8E35FF;
+    --cor-texto-branco: #ffffff;
+
+    --cor-background-roxo: #3B1270;
+    --cor-background-roxo-claro: #8E35FF;
+
+    --cor-borda: 90, 19, 180;
 }
 
 *{
@@ -15,104 +21,267 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-h1, h2, p{
-    color: var(--cor-primaria-fonte);
-    font-weight: 400;
-}
-/*Início cabeçalho*/
 header{
-    width:100%;
+    padding-top:1%;
 }
 
-nav{
-    padding: 1%;    ;
+a{
+    text-decoration: none;
+    color: var(--cor-link);
 }
 
-/*Classe genérica para Display Flex*/
-.displayFlex{
+a:hover{
+    color: var(--cor-texto-destaque);
+}
+
+.marginSite{
+    margin: 0 15%;
+}
+
+.alinharDivs{
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-between;
 }
 
-/*gap utilizado no cabeçalho*/
-.gapCabeçalho{
+.gapDiv{
     gap: 20%;
 }
 
-/*Gap entre os botões do cabeçalho*/
-.gapCabecalhoBotoes{
+.gapDivGradBlog{
     gap: 15%;
 }
 
-/*Borda do campo de Busca*/
-.bordaBusca{
-    border: 1px solid var(--cor-busca);
-    padding: 5px 10px;
-    gap: 3rem;
+.marginSuperior{
+    margin-top: 10%;
 }
 
-.bordaBusca:hover{
-    border:1px solid var(--cor-hover-texto)
+.corTextoBranco{
+    color: var(--cor-texto-branco);
 }
-/*Input de Busca no Blog*/
-.inputBusca{
-    border: none;
-    outline: none;
-    color: #5913b488;
-}
-
-.inputBusca::placeholder{
-    color: var(--cor-busca);
-}
-/*Fim input de busca no Blog*/
-
-/*Imagem da Lupa do Input de Busca*/
-.botaoBusca{
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-/*Removendo todo o estilo da Tag A*/
-.removeDecoration{
-    text-decoration: none;
-}
-
-.quebraDeLinha{
-    white-space: nowrap;
-}
-
-/*Display Flex do ambiente virtual*/
-.displayFlexAmbienteV{
-    display:flex;
-    align-items: center;
-    gap: 5px;
-}
-
 
 /*Versão Tablet*/
 @media screen and (max-width: 1024px){
-    .displayFlex{
+    .alinharDivs {
         flex-wrap: wrap;
     }
-    
-    .marginResponsiva{
-        margin: 5% 0;
-    }
+}
 
-    .tamanhoBotaoCabeçalho{
-        width: 70px;
-        height: auto;
-        text-align: center;
-    }
-
-    .marginBotaoCabeçalho{
-        margin: 10% 0;
+@media screen and (max-width: 767px){
+    .marginSite {
+        margin: 0 5%;
     }
 
 }
+/*Início Cabeçalho*/
 
-/*Versão Mobile*/
+.campoBusca{
+    border: 1px solid rgba(var(--cor-borda), 0.2);
+    padding: 2% 4%;
+    min-width: 220px;
+}
 
-/*fim cabeçalho*/
+input{
+    border: none;
+    outline: none;
+    color: var(--cor-texto);
+}
+
+input::placeholder{
+    color: var(--cor-texto);
+    opacity: 0.2;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.ambienteVirtual{
+    font-weight: 600;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+/*Fim Cabeçalho*/
+
+/*Início Apresentação*/
+h1{
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--cor-texto);
+}
+
+h2{
+    max-width: 940px;
+    font-size: 7rem;
+    font-weight: 400;
+    color: var(--cor-texto);
+}
+
+.textoSubTitulo{
+    max-width: 240px;
+    color: var(--cor-texto);
+    position: relative;
+    bottom: -85px;
+}
+
+@media screen and (max-width: 1024px){
+    h2 {
+        font-size: 4rem;
+    }
+
+    .imgSetaAmarela{
+        display: none;
+    }
+
+    .textoSubTitulo {
+        max-width: 435px;
+        position: initial;
+        margin-top: 3%;
+    }
+}
+
+@media screen and (max-width: 767px){
+    h1{
+        font-size: 1.15rem;
+    }
+    h2{
+        font-size: 2.5rem;
+    }
+}
+/*Fim Apresentação*/
+
+/*Início Escolha Curso*/
+.backgroundEscolhaCurso{
+    background-color: var(--cor-background-roxo);
+}
+
+.containerEscolhaCurso{
+    display: flex;
+
+}
+
+.posicaoPersonagem{
+    position: relative;
+    top: -75px;
+}
+
+.containerInfoEscolhaCurso{
+    padding: 4% 2%;
+}
+
+.subtituloEscolhaCurso{
+    font-size: 2rem;
+}
+
+.containerGraduacaoEscolhaCurso{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 3% 4%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    min-width: 495px;
+}
+
+.alinharBotoes{
+    display: flex;
+    align-items: center;
+    gap: 20%;
+}
+
+.botaoEscolhaCurso{
+    width: 17px;
+    height: 17px;
+}
+
+.tituloSoftSkills{
+    font-size: 1.2rem;
+}
+
+.tabelaSoftSkills{
+    margin: 4% 0;
+}
+
+.bordaSuperior{
+    border-top: 15px solid transparent;
+}
+
+.bordaDireita{
+    border-right: 50px solid transparent;
+}
+
+@media screen and (max-width: 1024px){
+    .posicaoPersonagem {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .subtituloEscolhaCurso {
+        font-size: 1.5rem;
+    }
+
+    .containerGraduacaoEscolhaCurso {
+        flex-wrap: wrap;
+        min-width: 0;
+        gap: 15px;
+    }
+
+    .alinharBotoes {
+        gap: 10%;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .botaoEscolhaCurso {
+        width: 34px;
+        height: 34px;
+    }
+
+    .tamanhoImg{
+        width: 100%;
+        height: auto;
+    }
+}
+/*Fim Escolha Curso*/
+
+/*Inicio Botão Inscrever-se*/
+.botaoInscreverSe{
+    display: block;
+    background-color: var(--cor-background-roxo-claro);
+    color: var(--cor-texto-branco);
+    font-size: 2rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    padding: 2% 0;
+    position: relative;
+    top: -45px;
+    transition: 0.3s;
+}
+
+.botaoInscreverSe:hover{
+    background-color: #5a13b4;
+    color: var(--cor-texto-branco);
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 1024px){
+    .botaoInscreverSe {
+        top: -30px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .botaoInscreverSe {
+        top: -15px;
+        font-size: 1.5rem;
+    }
+}
+/*Fim Botão Inscrever-se*/
